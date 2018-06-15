@@ -1,0 +1,24 @@
+{
+  "name": "metriclambda",
+  "version": "1.0.0",
+  "description": "Metric lambda provides the API for adding metrics.",
+  "main": "build/app.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "Hui",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.0.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "rimraf": "^2.6.2",
+    "gulp": "^3.9.1",
+    "gulp-rimraf": "^0.2.2",
+    "gulp-run": "^1.7.1",
+    "gulp-zip": "^4.1.0"
+  }
+}
