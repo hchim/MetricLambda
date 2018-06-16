@@ -1,6 +1,6 @@
 'use strict'
 
-import {MongoDBProxy} from 'lambdacommonutils';
+import {MongoDBProxy, APIGatewayHelper} from 'lambdacommonutils';
 
 let mongoDBProxy = null;
 
@@ -34,11 +34,12 @@ function processEvent(event, context, callback) {
             for (let metric of bodyJson.metrics) {
                 insertMetric(db, metric, callback);
             }
-            callback(null, {result: true});
+
+            APIGatewayHelper.successResponse({result: true}, callback);
         })
         .catch(err => {
             console.error("Failed to insert metric to db.", err);
-            callback(null, {result: false, error: err.message});
+            APIGatewayHelper.errorResponse(err, callback);
         });
 }
 
