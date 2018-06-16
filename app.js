@@ -28,7 +28,10 @@ function processEvent(event, context, callback) {
 
     mongoDBProxy.connectToDatabase()
         .then(db => {
-            for (let metric of event.metrics) {
+            const bodyJson = JSON.parse(event.body);
+
+            console.info("Body: " + JSON.stringify(bodyJson));
+            for (let metric of bodyJson.metrics) {
                 insertMetric(db, metric, callback);
             }
             callback(null, {result: true});

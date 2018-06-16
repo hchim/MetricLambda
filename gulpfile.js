@@ -29,15 +29,20 @@ gulp.task('npm:update', function() {
 });
 
 gulp.task('test', function() {
-    return gulp.src('test/event.json')
+    return gulp.src('package.json')
         .pipe(prompt.prompt([{
             type: 'input',
             name: 'password',
             message: 'MongoDB Password:'
+        }, {
+            type: 'input',
+            name: 'file',
+            message: 'Event json file:'
         }], (res) => {
             const uri = "mongodb+srv://lambda-user:" + res.password + "@cluster0-kncol.mongodb.net/test?retryWrites=true";
-            let command = "lambda-local -l build/app.js -e test/event.json -E {\\\"MONGODB_ATLAS_CLUSTER_URI\\\":\\\""
+            let command = "lambda-local -l build/app.js -e " + res.file + " -E {\\\"MONGODB_ATLAS_CLUSTER_URI\\\":\\\""
                 + uri + "\\\"\\\,\\\"MONGODB_NAME\\\":\\\"CloudAPIs\\\"}";
+            console.log(command);
             return run(command).exec();
         }));
 });

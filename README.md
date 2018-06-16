@@ -1,3 +1,6 @@
+# About
+
+This lambda function provides the API for insert metrics.
 
 # Design
 

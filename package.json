@@ -10,7 +10,7 @@
   "author": "Hui",
   "license": "ISC",
   "dependencies": {
-    "lambdacommonutils": "git@github.com:hchim/LambdaCommonUtils.git"
+    "lambdacommonutils": "git+ssh://git@github.com/hchim/LambdaCommonUtils.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
