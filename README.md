@@ -53,3 +53,9 @@
 ambda-local -l dist/app.js -e dist/test/event.json -E {\"MONGODB_ATLAS_CLUSTER_URI\":\"uri\"\,\"MONGODB_NAME\":\"CloudAPIs\"}
 ```
 
+# Deploy
+
+Set the variables:
+
+- MONGODB_ATLAS_CLUSTER_URI: mongodb cluster uri 
+- MONGODB_NAME: mongodb name
