@@ -50,7 +50,7 @@
 ## Use Lambda Local to Test
 
 ```
-ambda-local -l dist/app.js -e dist/test/event.json -E {\"MONGODB_ATLAS_CLUSTER_URI\":\"uri\"\,\"MONGODB_NAME\":\"CloudAPIs\"}
+lambda-local -l build/app.js -e test/event.json -E {\"MONGODB_ATLAS_CLUSTER_URI\":\"uri\"\,\"MONGODB_NAME\":\"CloudAPIs\"}
 ```
 
 # Deploy

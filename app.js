@@ -1,6 +1,6 @@
 'use strict'
 
-import MongoDBProxy from './lib/MongoDBProxy';
+import {MongoDBProxy} from 'lambdacommonutils';
 
 let mongoDBProxy = null;
 
